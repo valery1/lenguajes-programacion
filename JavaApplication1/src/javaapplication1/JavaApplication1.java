@@ -5,6 +5,8 @@
  */
 package javaapplication1;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author T-101
@@ -17,6 +19,23 @@ public class JavaApplication1 {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Primer programa de java 2");
+          JFrame ventana=new JFrame("HOLA MUNDO");
+         ventana.setSize(350,350);
+         ventana.setVisible(true);
+        
+                  
+                  
     }
+    /*
+    Ejercicio No.1 Crear Una ventana y personalizar el titulo con un constructor
+    */
     
+  
+           
+    
+    
+    
+
+
 }
+
