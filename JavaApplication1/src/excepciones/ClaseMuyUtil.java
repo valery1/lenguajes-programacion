@@ -15,9 +15,8 @@ public class ClaseMuyUtil {
               
               if(hola.contains("@"))
                   System.out.println("Si contiene un arroba");{
-        
-    }else{
-             System.out.println("No contiene el arroba");
+        /*
+        }else{*/             System.out.println("No contiene el arroba");
             }
     }
     
