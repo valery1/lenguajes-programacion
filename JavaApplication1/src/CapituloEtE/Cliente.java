@@ -25,6 +25,10 @@ public class Cliente {
         this.sueldo = sueldo;
         this.direccion = direccion;
     }
+
+    Cliente(String ana, String lopez, int i, int i0, Direccion direccion) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
       
       
     

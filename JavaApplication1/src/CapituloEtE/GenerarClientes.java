@@ -16,28 +16,16 @@ public class GenerarClientes {
    public static Cliente[] obtenerCliente(){
         
     Cliente clientes[]=new Cliente[3];
-   clientes[0]=new Cliente(null, null, null,// edad, sueldo, null);
-
-  
- 
-  
-  
-       
-      // return clientes;
-  
-  
-  
-  
-  
-  
-  
-  
-   }
-   
-   
-   
-   
-       
-       
+ Cliente Clientes[] = new Cliente[3];
+         
+        Clientes[0]=new Cliente("Ana","lopez",20,20000,new Direccion("sur 10",20,"ecatepec"));
+        Clientes[1]=new Cliente("Pedro","Martinez",45,14000,new Direccion("Mexico",122,"ecatepec"));
+        Clientes[2]=new Cliente("Ana","lopez",20,20000,new Direccion("sur 10",20,"ecatepec"));
+      
+                
+                
+           
+    return Clientes;
+    
+   }  
 }
-  
