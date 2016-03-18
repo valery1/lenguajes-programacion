@@ -6,22 +6,28 @@
 package Capitulo11.Collections;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 
 /**
  *
  * @author T-101
  */
 public class TestBasico extends javax.swing.JFrame {
-
+ArrayList<Pregunta>preguntas;
+JRadioButton radios[]=new JRadioButton[4];
+int numero=0;
     /**
      * Creates new form TestBasico
      */
     public TestBasico() {
         initComponents();
-       
+        radios[0]=Radio0;
+        radios[1]=Radio1;
+        radios[2]=Radio2;
+        radios[3]=Radio3;
         
-        
-          ArrayList<Pregunta> preguntas=GeneradorPregunta.obtenerTodasLasPreguntas();
+        preguntas=GeneradorPregunta.obtenerTodasLasPreguntas();
                  
                
         pregunta.setText(preguntas.get(0).getTitulo());
@@ -30,7 +36,7 @@ public class TestBasico extends javax.swing.JFrame {
         Radio2.setText(preguntas.get(0).getOpciones().get(2).getTitulo());
         Radio3.setText(preguntas.get(0).getOpciones().get(3).getTitulo());
         
-       Radio3.getT
+      
         
         
     }
@@ -120,7 +126,9 @@ public class TestBasico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+boolean respuesta=
+        GeneradorPregunta.checarRespuesta(preguntas.get(0),radios);
+JOptionPane.showMessageDialog(rootPane, "respuesta:"+respuesta);
         
 
 
@@ -175,4 +183,13 @@ public class TestBasico extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel pregunta;
     // End of variables declaration//GEN-END:variables
+
+    
 }
+    
+   
+
+
+
+
+
