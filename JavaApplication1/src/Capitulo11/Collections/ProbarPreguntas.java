@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ProbarPreguntas {
     public static void main(String[] args) {
      ArrayList<Pregunta>preguntas=
-    GeneradorPregunta.obtenerTodasLasPreguntas();
+    GeneradorPreguntas.obtenerTodasLasPeguntas();
      for(Pregunta p:preguntas){
      for(Opcion o:p.getOpciones()){
       System.out.println(o.getTitulo());

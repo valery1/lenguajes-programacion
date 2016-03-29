@@ -11,32 +11,24 @@ import javax.swing.JRadioButton;
 
 /**
  *
- * @author T-101
+ * @author campitos
  */
 public class TestBasico extends javax.swing.JFrame {
-ArrayList<Pregunta>preguntas;
+ArrayList<Pregunta> preguntas;
 JRadioButton radios[]=new JRadioButton[4];
 int numero=0;
     /**
      * Creates new form TestBasico
      */
-    public TestBasico() {
+    public TestBasico() { 
+        preguntas=
+                GeneradorPreguntas.obtenerTodasLasPeguntas();
+     
         initComponents();
-        radios[0]=Radio0;
-        radios[1]=Radio1;
-        radios[2]=Radio2;
-        radios[3]=Radio3;
+   
+        iniciarTodas();
         
-        preguntas=GeneradorPregunta.obtenerTodasLasPreguntas();
-                 
-               
-        pregunta.setText(preguntas.get(0).getTitulo());
-        Radio0.setText(preguntas.get(0).getOpciones().get(0).getTitulo());
-        Radio1.setText(preguntas.get(0).getOpciones().get(1).getTitulo());
-        Radio2.setText(preguntas.get(0).getOpciones().get(2).getTitulo());
-        Radio3.setText(preguntas.get(0).getOpciones().get(3).getTitulo());
         
-      
         
         
     }
@@ -52,10 +44,10 @@ int numero=0;
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         pregunta = new javax.swing.JLabel();
-        Radio0 = new javax.swing.JRadioButton();
-        Radio1 = new javax.swing.JRadioButton();
-        Radio2 = new javax.swing.JRadioButton();
-        Radio3 = new javax.swing.JRadioButton();
+        radio0 = new javax.swing.JRadioButton();
+        radio1 = new javax.swing.JRadioButton();
+        radio2 = new javax.swing.JRadioButton();
+        radio3 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -63,80 +55,89 @@ int numero=0;
 
         pregunta.setText("Pregunta");
 
-        buttonGroup1.add(Radio0);
-        Radio0.setText("jRadioButton1");
+        buttonGroup1.add(radio0);
+        radio0.setText("jRadioButton1");
 
-        buttonGroup1.add(Radio1);
-        Radio1.setText("jRadioButton2");
+        buttonGroup1.add(radio1);
+        radio1.setText("jRadioButton2");
 
-        buttonGroup1.add(Radio2);
-        Radio2.setText("jRadioButton3");
+        buttonGroup1.add(radio2);
+        radio2.setText("jRadioButton3");
 
-        buttonGroup1.add(Radio3);
-        Radio3.setText("jRadioButton4");
+        buttonGroup1.add(radio3);
+        radio3.setText("jRadioButton4");
 
-        jButton1.setText("Checar Respuesta");
+        jButton1.setText("checar respuesta");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Ir a siguiente Pregunta");
+        jButton2.setText("Ir a seiguiente pregunta");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Radio1)
-                    .addComponent(Radio2)
-                    .addComponent(Radio3)
-                    .addComponent(Radio0)
+                    .addComponent(radio0)
+                    .addComponent(radio1)
+                    .addComponent(radio2)
+                    .addComponent(radio3)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2)))
-                .addContainerGap(274, Short.MAX_VALUE))
-            .addComponent(pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(133, Short.MAX_VALUE))
+            .addComponent(pregunta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(pregunta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(radio0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radio1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(radio2)
                 .addGap(18, 18, 18)
-                .addComponent(Radio0)
-                .addGap(18, 18, 18)
-                .addComponent(Radio1)
-                .addGap(27, 27, 27)
-                .addComponent(Radio2)
-                .addGap(26, 26, 26)
-                .addComponent(Radio3)
-                .addGap(18, 18, 18)
+                .addComponent(radio3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-boolean respuesta=
-        GeneradorPregunta.checarRespuesta(preguntas.get(0),radios);
-JOptionPane.showMessageDialog(rootPane, "respuesta:"+respuesta);
+        // TODO add your handling code here:
+          
+   boolean respuesta=  
+   GeneradorPreguntas.checarRespuesta(preguntas.get(numero), radios);
+       
+   JOptionPane.showMessageDialog(rootPane, "Respuesta:"+respuesta);
         
-
-
-
-
-
-
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        numero++;
+        iniciarTodas();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,6 +165,7 @@ JOptionPane.showMessageDialog(rootPane, "respuesta:"+respuesta);
             java.util.logging.Logger.getLogger(TestBasico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -174,22 +176,41 @@ JOptionPane.showMessageDialog(rootPane, "respuesta:"+respuesta);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton Radio0;
-    private javax.swing.JRadioButton Radio1;
-    private javax.swing.JRadioButton Radio2;
-    private javax.swing.JRadioButton Radio3;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel pregunta;
+    private javax.swing.JRadioButton radio0;
+    private javax.swing.JRadioButton radio1;
+    private javax.swing.JRadioButton radio2;
+    private javax.swing.JRadioButton radio3;
     // End of variables declaration//GEN-END:variables
-
+public void iniciarTodas(){
     
+    if(numero<preguntas.size()){
+        radios[0]=radio0;
+        radios[1]=radio1;
+        radios[2]=radio2;
+        radios[3]=radio3;
+ArrayList<Pregunta> preguntas=GeneradorPreguntas.obtenerTodasLasPeguntas();
+        pregunta.setText(preguntas.get(numero).getTitulo());
+        
+        radio0.setText(preguntas
+                .get(numero).getOpciones()
+                .get(0).getTitulo());
+        
+        radio1.setText(preguntas
+                .get(numero).getOpciones()
+                .get(1).getTitulo());
+        
+        radio2.setText(preguntas
+                .get(numero).getOpciones()
+                .get(2).getTitulo());
+        
+        radio3.setText(preguntas
+                .get(numero).getOpciones()
+                .get(3).getTitulo()); 
+    }
 }
-    
-   
 
-
-
-
-
+}
